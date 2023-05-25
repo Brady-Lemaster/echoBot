@@ -1,27 +1,18 @@
-username = prompt("gimme social security number")
+username = prompt('gimme social security number')
 
 const CLIENT_ID = 'hWmT5ZuGe51IgiMD';
 
 const botdrone = new ScaleDrone(CLIENT_ID, {
   data: {
-    name: 'echo ' + { +,
+    name: 'echo ' + '{' + username + '}',
     color: '#AFEDCB',
   },
-});
-drone.on('open', error => {
-  const room = drone.subscribe('observable-room');
-  room.on('data', (text, member) => {
-    drone.publish({
-    room: 'observable-room',
-    message: prompt,
-  });
-  });
 });
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: getRandomName(),
-    color: getRandomColor(),
+    name: username,
+    color: '#EDAFCB',
   },
 });
 
@@ -103,6 +94,10 @@ function sendMessage() {
   }
   DOM.input.value = '';
   drone.publish({
+    room: 'observable-room',
+    message: value,
+  });
+  botDrone.publish({
     room: 'observable-room',
     message: value,
   });
