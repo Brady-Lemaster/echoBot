@@ -4,7 +4,7 @@ const CLIENT_ID = 'hWmT5ZuGe51IgiMD';
 
 const botdrone = new ScaleDrone(CLIENT_ID, {
   data: {
-    name: 'echo ' + '{' + username + '}',
+    name: 'echobot ' + '{' + username + '}',
     color: '#AFEDCB',
   },
 });
